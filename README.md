@@ -9,7 +9,9 @@ If do you want to change the Window Size or the Map Size or the Amounth of Squar
 
 Change : 
   ` WIDTH	 &  HEIGHT  for Window size `
+ 
   ` rWIDTH & rHEIGHT  for Map size    `
+
   ` MAPnb             for Amouth of Squares to bleed on`
 
 If you want to have fun changing the Square size or Deadpool img size or the speed, it's also in ` includes/const_vars.h `

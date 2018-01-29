@@ -7,7 +7,8 @@ If it still doesn't works contact me.
 
 If do you want to change the Window Size or the Map Size or the Amounth of Squares to bleed on => Open ` includes/const_vars.c `
 
-Change : 
+ ---> Change : 
+
 ` WIDTH	 &  HEIGHT  for Window size `
 
 ` rWIDTH & rHEIGHT  for Map size    `

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/header.h"
+# include "header.h"
 
 /*
 **			Starts the game ( OMG I did not noticed that ) 

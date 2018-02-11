@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/header.h"
+# include "header.h"
 
 /*
 **			Print every object in the window

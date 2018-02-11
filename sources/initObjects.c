@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/header.h"
+# include "header.h"
 
 /*
 **			Initializes the first Object and Image ( Oh ... I thought it made puppies )
@@ -21,7 +21,7 @@ int					X_InitObjects(t_game *game) {
 	game->img = X_CreateImg(	game->render,
 								( WIDTH / 2 ) - (IMGw),
 								( HEIGHT / 2 ) - (IMGh),
-								"stock/p.png" );
+								"assets/p.png" );
 
 	game->obj = X_CreateObject(	game->render,
 								( WIDTH / 4 ) - (OBJw / 2),
@@ -32,7 +32,7 @@ int					X_InitObjects(t_game *game) {
 	game->back = X_CreateImg(	game->render,
 								0,
 								0,
-								"stock/back.jpg" );
+								"assets/back.jpg" );
 	game->back.pos.w = rWIDTH;
 	game->back.pos.h = rHEIGHT;
 	
@@ -72,7 +72,7 @@ int					X_InitMap(t_game *game) {
 
 	}
 
-	if (!(game->font = TTF_OpenFont("./stock/Arial.ttf", 150)))
+	if (!(game->font = TTF_OpenFont("./assets/Arial.ttf", 150)))
 	{
 		printf("%s\n", TTF_GetError());
 		return (0);

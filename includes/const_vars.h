@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONST_VARS_H
-# define CONST_VARS_H
+#ifndef DEADPOOL_CONST_VARS_H
+# define DEADPOOL_CONST_VARS_H
 
 # include "header.h"
 # include "sys_inc.h"

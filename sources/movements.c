@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/header.h"
+# include "header.h"
 
 static void				X_DeadpoolBleeds(t_game *game) {
 

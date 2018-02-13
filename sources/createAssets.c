@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/header.h"
+# include "header.h"
 
 /*
 **		Creates a SDL_Rect with the given params

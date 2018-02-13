@@ -12,10 +12,16 @@
 
 NAME		=	Deadpool_Bleeds
 
-LIBS_SDL	=	`SDL2-config --cflags --libs` -lSDL2_image -lSDL2_ttf
-GCC_FLAGS	=	gcc -Wall -Werror -Wextra -Weverything $(LIBS_SDL)
+ifeq (,$(shell command -v SDL2-config 2> /dev/null))
+	SDL_EXEC := SDL2-config
+else
+	SDL_EXEC := sdl2-config
+endif
 
-INCLUDES	=	-I./includes
+LIBS_SDL	=	`$(SDL_EXEC) --libs` -lSDL2_image -lSDL2_ttf
+GCC_FLAGS	=	gcc -Wall -Werror -Wextra
+
+INCLUDES	=	-I./includes `$(SDL_EXEC) --cflags`
 INC			=	 includes/header.h includes/const_vars.h 
 
 SRCS_DIR	=	sources/
@@ -40,14 +46,19 @@ SRCS		= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
 OBJS		= $(SRCS:.c=.o)
 
-all : $(NAME)
+all : checkup $(NAME)
 
 $(NAME): $(OBJS) $(INC) Makefile
-	@$(GCC_FLAGS) -o $(NAME) $(OBJS) $(INCLUDES)
+	@$(GCC_FLAGS) -o $(NAME) $(OBJS) $(INCLUDES) $(LIBS_SDL)
 	@echo "\033[92m               Done !\033[0m"
 
 %.o : %.c
-	@gcc -c -o $@ $< $(INCLUDES)
+	@gcc $(INCLUDES) -c -o $@ $<
+
+checkup:
+	@if [ "$(shell command -v brew 2> /dev/null)" = "" ]; then echo "brew is not installed - WARNING"; fi
+	@if [ "$(shell command -v $(SDL_EXEC) 2> /dev/null)" = "" ]; then echo "SDL2 is not installed - ABORT" && exit 1; fi
+
 
 clean :
 	@rm -rf $(OBJS)
@@ -60,3 +71,5 @@ fclean : clean
 
 re: fclean
 	@make
+
+.PHONY: re fclean clean checkup %.o %.c $(NAME) all 

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SYS_INC_H
-# define SYS_INC_H
+#ifndef DEADPOOL_SYS_INC_H
+# define DEADPOOL_SYS_INC_H
 
 # include "const_vars.h"
 # include "header.h"
@@ -21,6 +21,7 @@
 */
 
 # include <stdio.h>
+# include <time.h>
 # include <string.h>
 # include <unistd.h>
 
@@ -28,8 +29,9 @@
 **		SDL2 Includes
 */
 
-# include "../.sdl2/SDL.h"
-# include "../.sdl2/SDL_image.h"
-# include "../.sdl2/SDL_ttf.h"
+# include <SDL2/SDL.h>
+# include <SDL2/SDL_image.h>
+# include <SDL2/SDL_ttf.h>
+# include <SDL2/SDL_mixer.h>
 
 #endif

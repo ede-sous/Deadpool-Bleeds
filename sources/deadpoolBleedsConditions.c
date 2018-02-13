@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/header.h"
+# include "header.h"
 
 void			X_ConditionDeadpool(t_obj *tmp, SDL_Renderer *render) {
 
